@@ -8,9 +8,6 @@
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
@@ -73,33 +70,9 @@ var turn_radio = function() {
 
 <body>
 <div id="wrap">
-	<div id="main">
-
-		<div class="header">
-			<h1 class="title"><?php echo CHtml::encode(Yii::app()->name); ?></h1>
-		</div><!-- header -->
-
-		<div class="content">
-
-			<?php if(isset($this->breadcrumbs)):?>
-				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-				'homeLink'=>CHtml::link('Search Patient', array('/site/index')),
-				'links'=>$this->breadcrumbs,
-				)); ?><!-- breadcrumbs -->
-			<?php endif?>
-
-			<?php echo $content; ?>
-
-			<div class="clear"></div>
-
-			<div id="footer">
-				Copyright &copy; <?php echo date('Y'); ?>.<br/> 
-				Munich Innovation Group GmbH<br/>
-				All Rights Reserved.
-			</div>
-
-		</div><!-- container -->
-	</div><!-- page -->
+    <div id="main">
+		<?php echo $content; ?>
+    </div><!-- main -->
 </div><!-- wrap -->
 
 </body>
