@@ -34,10 +34,6 @@
  * @license http://www.yiiframework.com/license/
  */
 
-div.form
-{
-}
-
 div.form input,
 div.form textarea,
 div.form select
@@ -55,20 +51,17 @@ div.form fieldset
 
 div.form label
 {
-	font-weight: bold;
 	font-size: 0.9em;
 	display: block;
+	margin: 5px 0px 5px 10px;
 }
 
 div.form .row
 {
 	margin: 5px 0;
-	color: #000;
-	font-weight: bold;
-	margin: 0;
+	color: #fcf9f4;
 	padding: 10px;
-	background: transparent;
-
+	margin: 0 auto;
 }
 
 div.row
@@ -98,7 +91,7 @@ div.form div.error label:first-child,
 div.form label.error,
 div.form span.error
 {
-	color: #C00;
+	color: #f4f4f2;
 }
 
 div.form div.error input,
@@ -108,7 +101,7 @@ div.form input.error,
 div.form textarea.error,
 div.form select.error
 {
-	background: #FEE;
+	background: transparent;
 	border-color: #C00;
 }
 
@@ -139,7 +132,7 @@ div.form .errorSummary
 
 div.form .errorMessage
 {
-	color: red;
+	color: #f4f4f2;
 	font-size: 0.9em;
 }
 
@@ -191,14 +184,22 @@ select
 	cursor: pointer;
 	outline: none;
 	font-weight: bold;
+	height: 20px;
 }
-input[type=text] 
+input[type=text], input, input[type="password"], input[type="search"]  
 {
-	padding:5px; border:2px solid #ccc; 
+	padding:9px; 
+	border:1px solid #fcf9f4; 
 	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 3px;
 	background: transparent;
+	width: 291px;
 }
+input[type="password"]:focus, input[type="search"]:focus
+{
+	border-color:#333; 
+	background: transparent;
+} 
 input[type=text]:focus 
 {
 	border-color:#333; 
@@ -207,20 +208,34 @@ input[type=text]:focus
 
 input[type=submit] 
 {
-	padding:5px 15px; 
-	cursor:pointer;
+	cursor:pointer !important;
 	-webkit-border-radius: 3px;
 	border-radius: 3px; 
 	-webkit-appearance: push-button;
 	-webkit-user-select: none;
 	white-space: pre;
-	background: #f4f4f2
-	border-color: #f4f4f2;
-	color: #598eba;
+	background: #fcf9f4;
+	border-color: #fcf9f4;
+	color: #1b98f2;
 	cursor: pointer;
-	border: 1px solid #999;
+	border: 1px solid #fcf9f4;
 	border-radius: 3px;
 	font-size: 14px;
 	padding: 8px;
+	margin: 10px 220px!important;
 	width: 100px;
 }
+input[type=submit]:focus
+{
+	background: transparent; 
+	color: #fcf9f4;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #1382d9 inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: #1382d91382d9,0 0 0 50px white inset;
+    -webkit-text-fill-color: #333;
+}   

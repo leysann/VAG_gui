@@ -36,7 +36,7 @@ class Patients extends CActiveRecord
 		return array(
 			array('idPatients, md5hash, birthdate, gender', 'required'),
 			array('gender', 'numerical', 'integerOnly'=>true, 'min'=>0, 'max'=>1),
-			array('birthdate','date','format'=>'yyyy-MM-dd'),//MySQL like format
+			array('birthdate','date','format'=>'yyyy-MM-dd'),
 			array('idPatients', 'length', 'max'=>10),
 			array('md5hash', 'length', 'max'=>64),
 			array('md5hash','unique'),
@@ -48,8 +48,11 @@ class Patients extends CActiveRecord
 	protected function afterFind ()
 	{
 		// convert to display format
-		$this->birthdate = strtotime ($this->birthdate);
-		$this->birthdate = date('d.m.Y', $this->birthdate);
+		if(!empty($this->birthdate))
+		{
+			$this->birthdate = strtotime ($this->birthdate);
+			$this->birthdate = date('d.m.Y', $this->birthdate);
+		}
 		parent::afterFind ();
 	}
 	protected function beforeValidate ()
@@ -69,6 +72,7 @@ class Patients extends CActiveRecord
 		return array(
 			'mRIDataSets' => array(self::HAS_MANY, 'MRIDataSets', 'Patients_idPatients'),
 			'oNNForms' => array(self::HAS_MANY, 'ONNForm', 'Patients_idPatients'),
+			'diagnosis' => array(self::HAS_MANY, 'Diagnosis', 'Patients_idPatients'),
 			'oxfordKneeScores' => array(self::HAS_MANY, 'OxfordKneeScores', 'Patients_idPatients'),
 			'sessions' => array(self::HAS_MANY, 'Sessions', 'Patients_idPatients'),
 			'signalAcquisitions' => array(self::HAS_MANY, 'SignalAcquisition', 'Patients_idPatients'),
@@ -87,12 +91,10 @@ class Patients extends CActiveRecord
 			'gender' => 'Gender',
 		);
 	}
-	
 	public function GetGenderLabel()
 	{
 		return $this->gender == 0 ? 'Male' : 'Female';
 	}
-
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -120,7 +122,12 @@ class Patients extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
+	
+	public function findByMD5Hash($md5hash)
+	{
+		return $this->findByAttributes(array('md5hash'=>$md5hash));
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -131,4 +138,5 @@ class Patients extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
 }

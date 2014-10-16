@@ -37,22 +37,6 @@ class SessionsController extends Controller
 			),
 		);
 	}
-
-
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	//*
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-	//*/
-
 	
 	/**
 	 * Creates a new model.
@@ -60,39 +44,34 @@ class SessionsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$idPatient = Yii::app()->session['idPatient'];
-		if(empty($idPatient))
-		{
-			$this->redirect(array('Patients/Search'));
-		}
-		
 		$model=new Sessions;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-
 		if(isset($_POST['Sessions']))
 		{
 			$model->attributes=$_POST['Sessions'];
+			$idPatient = Yii::app()->session['idPatient'];
+			if(empty($idPatient))
+			{
+				$this->redirect(array('Patients/Search'));
+			}
+			$model->attributes=$_POST['Sessions'];
+			// Uncomment the following line if AJAX validation is needed
+			// $this->performAjaxValidation($model);
+			$model->SystemUsers_idSystemUser = Yii::App()->user->id;
+			$model->Patients_idPatients = $idPatient;
+			$model->timestamp = new CDbExpression('NOW()');
+			// Make sure the name is unique... 
+			//if(!Sessions::model()->exists('sessionName = :name', array(":name"=>$model->sessionName)))
+			//{
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->idSession));
+			{
+				Yii::app()->session['idSession'] = $model->idSession;
+				$this->redirect(array('Sessions/View','id'=>$model->idSession));
+			}
+			
 		}
-
-		
-		$model->SystemUsers_idSystemUser = Yii::App()->user->id;
-		$model->Patients_idPatients = $idPatient;
-		$model->timestamp = new CDbExpression('NOW()');
-		if($model->save())
-		{
-
-			Yii::app()->session['idSession'] = $model->idSession;
-			$this->redirect(array('Sessions/View','id'=>$model->idSession));
-			//$this->redirect(array('Sessions/View'));
-
-			$this->redirect(array('Sessions/List'));
-
-		}
+		$this->render('create',array(
+				'model'=>$model,
+		));
 	}
 	/**
 	 * Updates a particular model.
@@ -119,7 +98,6 @@ class SessionsController extends Controller
 		));
 	}
 	*/
-
 	
 	/**
 	 * Displays a particular model.
@@ -163,7 +141,6 @@ class SessionsController extends Controller
 		$this->render('/sessions/view', array('model'=>$this->loadModel($idSession ),'renderedSessionDetailsView' => $renderedSessionDetailsView));
 	}
 	*/
-
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.

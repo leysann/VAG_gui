@@ -15,23 +15,17 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'firstname'); ?>
 		<?php echo $form->textField($model,'firstname',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'firstname'); ?>
-	</div>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'lastname'); ?>
 		<?php echo $form->textField($model,'lastname',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'lastname'); ?>
-	</div>
 
-	<div class="row">
 		<?php echo $form->labelEx($model,'birthdate'); ?>
 		<?php 
 			$this->widget('zii.widgets.jui.CJuiDatePicker',array(
@@ -59,9 +53,10 @@
 		<?php echo $form->error($model,'md5'); ?>
 	</div>
 -->	
-	<div class="row">
+
+	<div class="row buttons">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->dropDownList($model, 'gender', array('0'=>'Male','1'=>'Female')); ?>
+		<?php echo $form->radioButtonList($model, 'gender', array('0'=>'Male','1'=>'Female')); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 

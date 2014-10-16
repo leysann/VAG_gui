@@ -8,10 +8,9 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-<div class="logo">
-        <img src="images/logovag.png" alt="Stack Overflow" />
-</div>
+
 <div class="form">
+<img src="images/logovag.png" alt="VAG logo" />
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
@@ -20,11 +19,10 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->labelEx($model,'login'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
-	</div>
-	<div class="row">
+
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>

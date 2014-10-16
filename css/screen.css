@@ -12,23 +12,61 @@
 ----------------------------------------------------------------------- */
 
 /* reset.css */
-html {margin:0;padding:0;border:0;}
+html {
+	margin:0;
+	padding:0;
+	border:0;
+}
 /* Eric Meyer's Reset */html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
 
-body {line-height:1.5;background:white;}
-table {border-collapse:separate;border-spacing:0;}
-caption, th, td {text-align:left;font-weight:normal;float:none !important;}
-table, th, td {vertical-align:middle;}
-blockquote:before, blockquote:after, q:before, q:after {content:'';}
-blockquote, q {quotes:"" "";}
-a img {border:none;}
-:focus {outline:0;}
+body {
+	line-height:1.5;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+	float:none !important;
+}
+table, th, td {
+	vertical-align:middle;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content:'';
+}
+blockquote, q {
+	quotes:"" "";
+}
+a img {
+	border:none;
+}
+:focus {
+	outline:0;
+}
 
 /* typography.css */
-html {font-size:100.01%;}
-body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
-h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
-h1 {font-size:2em;line-height:1;margin-bottom:0.5em;font-weight: bold !important;}
+html {
+	font-size:100.01%;
+}
+body 
+{
+	font-size:75%;
+	color:#222;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	color:#111;
+}
+h1 {
+	font-size:2em;
+	line-height:1;
+	margin-bottom:0.5em;
+	font-weight: bold !important;
+}
 h2 {font-size:1.6em;margin-bottom:0.75em;font-weight: bold !important;}
 h3 {font-size:1.4em;line-height:1;margin-bottom:1em;}
 h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
@@ -47,9 +85,11 @@ a:focus, a:hover
 	-webkit-touch-callout: none;
 	vertical-align: baseline;
 }
-a {color: #0085d5;
-text-decoration: none;
--webkit-touch-callout: none;}
+a {
+	color: #0085d5;
+	text-decoration: none;
+	-webkit-touch-callout: none;
+}
 blockquote {margin:1.5em;color:#666;font-style:italic;}
 strong, dfn {font-weight:bold;}
 em, dfn {font-style:italic;}

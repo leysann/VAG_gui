@@ -3,9 +3,6 @@
 /* @var $model PatientsSearchForm */
 /* @var $form CActiveForm */
 ?>
-
-<h2>Search Patient</h2>
-
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -16,8 +13,6 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 

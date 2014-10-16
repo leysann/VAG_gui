@@ -74,6 +74,5 @@ var turn_radio = function() {
 		<?php echo $content; ?>
     </div><!-- main -->
 </div><!-- wrap -->
-
 </body>
 </html>
