@@ -13,7 +13,7 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript">
+    <script type="text/javascript">
 	var d = document;
 var safari = (navigator.userAgent.toLowerCase().indexOf('safari') != -1) ? true : false;
 var gebtn = function(parEl,child) { return parEl.getElementsByTagName(child); };

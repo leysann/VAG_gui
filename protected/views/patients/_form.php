@@ -45,16 +45,8 @@
 		?>
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
-	
-<!--  
-	<div class="row">
-		<?php echo $form->labelEx($model,'md5'); ?>
-		<?php echo $form->textField($model,'md5',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'md5'); ?>
-	</div>
--->	
 
-	<div class="row buttons">
+	<div>
 		<?php echo $form->labelEx($model,'gender'); ?>
 		<?php echo $form->radioButtonList($model, 'gender', array('0'=>'Male','1'=>'Female')); ?>
 		<?php echo $form->error($model,'gender'); ?>
