@@ -81,32 +81,16 @@ var turn_radio = function() {
 
         <div class="content">
 
-            <?php if(isset($this->breadcrumbs)):?>
-                <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-                'homeLink'=>CHtml::link('Search Patient', array('/site/index')),
-                'links'=>$this->breadcrumbs,
-                )); ?><!-- breadcrumbs -->
-            <?php endif?>
-
             <?php echo $content; ?>
 
             <div class="clear"></div>
-
-            <div id="footer">
-                Copyright &copy; <?php echo date('Y'); ?>.<br/> 
-                Munich Innovation Group GmbH<br/>
-                All Rights Reserved.
-            </div>
 
         </div><!-- container -->
     </div><!-- page -->
 </div><!-- wrap -->
 
 <div id="sidebar">
-    <div class="header">
-        <p class="title">Menu</p>
-    </div><!--header-->
-            
+           
     <div class="content">
         <ul class="nav">
             <?php $this->widget('zii.widgets.CMenu',array(
