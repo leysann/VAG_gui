@@ -38,7 +38,6 @@ body, html {
 	font: 16px normal Helvetica,sans-serif;
 	-webkit-user-select: none;
 }	
-
 	#main .content{}
 	#main .content>:first-child{margin-top:0!important;}
 	#main .content .title{font-size:18px;font-weight:bold;margin:20px 0 10px;}
@@ -209,17 +208,18 @@ body, html {
 
 
 	#sidebar {
+		padding-top:50px;
+		padding: 20px 20px 20px 0;
 		background:transparent;
 		left:0;
 		top:0;
 		vertical-align:top;width:250px;
-		z-index:1;
-	}
+		z-index:1;}
 		#sidebar .header {width:300px;}
 			#sidebar .header .title {}
 		#sidebar .content {padding: 43px 0 20px 0;}
 			#sidebar .content .nav {
-				
+				padding:10px;
 			}
 				#sidebar .content .nav a {
 					background:#D9DCE0;

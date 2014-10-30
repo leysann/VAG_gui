@@ -1,9 +1,9 @@
 <?php /* @var $this Controller */ ?>
-<?php $this->beginContent('//layouts/main'); ?>
+<?php $this->beginContent('//layouts/dashboard'); ?>
 	<div id="content">
 		<?php echo $content; ?>
 	</div><!-- content -->
-<!-- Portlet<div class="span-5">
+ Portlet<div class="span-5">
 	<div id="sidebar">
 	<?php
 		$this->beginWidget('zii.widgets.CPortlet', array(

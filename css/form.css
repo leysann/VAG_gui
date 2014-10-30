@@ -65,11 +65,15 @@ fieldset
 }
 #radio1, #radio2 label
 { 
-	float:left; clear:none; display:inline;
+	float:left; 
+	clear:none; 
+	display:inline;
 }
 input[type=radio], input.radio 
 { 
-	float:left; clear:none; margin: 2px 0 0 2px; 
+	clear:none; 
+	margin: 2px 0 0 2px; 
+	width: auto;
 }
 div.form label
 {
