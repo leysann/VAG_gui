@@ -33,6 +33,7 @@ body, html {
  	background: -moz-linear-gradient(bottom right, #0962b6 , #1b98f2#0962b6 , #1b98f2); /* For Firefox 3.6 to 15 */
  	background: linear-gradient(to bottom right, #0962b6 , #1b98f2); /* Standard syntax */
 }
+img {float: left;}
 #wrap {
 	font: 16px normal Helvetica,sans-serif;
 	-webkit-user-select: none;
@@ -43,6 +44,7 @@ body, html {
 		#main .header {
 			padding-left:155px;
 			width:100%;
+			height: 25px;
 		}
 			#main .header .left,
 			#main .header .right {
@@ -179,6 +181,12 @@ body, html {
 
 				/* Links */
 				a {color:white;text-decoration:none;-webkit-touch-callout: none;}
+				#main a.loginlink
+				{
+					text-decoration: underline;
+					margin: 10px 210px!important;
+					font-size: 0.9em;
+				}
 				#main .content .box-white p a,
 				#main .content table a {display: block;padding: 10px;margin: -10px;}
 

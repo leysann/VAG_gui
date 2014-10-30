@@ -45,13 +45,13 @@
 		?>
 		<?php echo $form->error($model,'birthdate'); ?>
 	</div>
-
-	<div>
-		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->radioButtonList($model, 'gender', array('0'=>'Male','1'=>'Female')); ?>
-		<?php echo $form->error($model,'gender'); ?>
+	<fieldset>
+	<div class="some-class">
+		<div id="radio1"><label for="radio1"><?php echo $form->labelEx($model,'gender'); ?></label></div>
+		<div id="radio2"><label for="radio2"><?php echo $form->radioButtonList($model, 'gender', array('0'=>'Male','1'=>'Female')); ?>
+		</label></div>
 	</div>
-
+	</fieldset>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Create'); ?>
 	</div>

@@ -27,7 +27,7 @@ $this->breadcrumbs=array(
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
-
+	<div><a class="loginlink">Forgot password?</a></div>
 	<div class="loginbutt">
 		<?php echo CHtml::submitButton('Login'); ?>
 	</div>

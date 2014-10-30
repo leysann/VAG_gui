@@ -3,8 +3,20 @@
 /* @var $model PatientsSearchForm */
 /* @var $form CActiveForm */
 ?>
-<div class="form">
 
+<div class="form">
+	<div class="newpat">
+		<p class="alignleft">Search Patient</p>
+		<p class="alignright"><img src="images/add121.png"/><?php $this->widget('zii.widgets.CMenu',array(
+				'items'=>array(
+				array('label'=>'new', 'url'=>array('/patients/create')),
+	),
+			)); ?></p>
+	</div>
+
+
+
+	<div style="clear: both;"></div>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'patients-search-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -15,7 +27,6 @@
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'firstname'); ?>
 		<?php echo $form->textField($model,'firstname',array('size'=>45,'maxlength'=>45)); ?>

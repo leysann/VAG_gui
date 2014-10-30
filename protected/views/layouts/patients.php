@@ -75,34 +75,17 @@ var turn_radio = function() {
 <div id="wrap">
     <div id="main">
 
-        <div class="header">
-            <h1 class="title"><?php echo CHtml::encode(Yii::app()->name); ?></h1>
-        </div><!-- header -->
-
-        <div class="content">
-
-            <?php echo $content; ?>
-
-            <div class="clear"></div>
-
-        </div><!-- container -->
-    </div><!-- page -->
-</div><!-- wrap -->
-
-<div id="sidebar">
-           
-    <div class="content">
-        <ul class="nav">
-            <?php $this->widget('zii.widgets.CMenu',array(
-                'items'=>array(
-                array('label'=>'Search Patient', 'url'=>array('/site/index')),
-                array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-                array('label'=>'Contact', 'url'=>array('/site/contact')),
-                array('label'=>'Oxford Knee', 'url'=>array('/oxfordKneeScores/index')),
-                array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+        <div class="header" style="padding: 10px 35px;"><img src="images/stand.png" height="30px" alt="logout" />
+ <?php $this->widget('zii.widgets.CMenu',array(
+                'items'=>array(array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                 ),
             )); ?>
+        <img src="images/stand.png" height="30px" alt="logout"/></div><!-- header -->
+
+        <div class="content">
+<ul class="nav">
+           
             <?php
                 $this->beginWidget('zii.widgets.CPortlet', array(
                 'title'=>'Operations',
@@ -114,7 +97,11 @@ var turn_radio = function() {
                 $this->endWidget();
             ?>
         </ul>
-    </div>
-</div><!-- sidebar menu -->
+            <?php echo $content; ?>
+
+
+        </div><!-- container -->
+    </div><!-- page -->
+</div><!-- wrap -->
 </body>
 </html>
