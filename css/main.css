@@ -222,9 +222,9 @@ body, html {
 				
 			}
 				#sidebar .content .nav a {
-					background:#D9DCE0;
-					border-top:1px solid #E7EAED;
-					border-bottom:1px solid #D0D3D7;
+					background:#fcf9f4;
+					border:1px solid #E7EAED;
+					/*border-bottom:1px solid #D0D3D7;*/
 					color:#000;
 					display:block;
 					font-weight:900;
@@ -505,7 +505,7 @@ div.search-form
 	font-size:0.9em;
 	margin: 0 0 15px 0;
 	padding: 5px 8px;
-	background:#d8dae0;
+	background:transparent;
 }
 
 .portlet-content ul
