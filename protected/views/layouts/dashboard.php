@@ -92,19 +92,22 @@ var turn_radio = function() {
             
     <div class="content">
         <ul class="nav">
-            <?php $this->widget('zii.widgets.CMenu',array(
-                'items'=>array(
-                array('label'=>'Oxford Knee', 'url'=>array('/oxfordKneeScores/index')),
-                ),
-            )); ?>
-            <?php
-                $this->beginWidget('zii.widgets.CPortlet', array(
-                'title'=>'Operations',
-                ));
+            <?php 
+            $image = CHtml::image(Yii::app()->request->baseUrl.'/images/avatar.png');
+            echo CHtml::link($image,array('/site/page', 'view'=>'about')); 
+            $this->beginWidget('zii.widgets.CPortlet');
                 $this->widget('zii.widgets.CMenu', array(
                 'items'=>$this->menu,
                 'htmlOptions'=>array('class'=>'operations'),
-                ));
+            ));
+
+            $this->widget('zii.widgets.CMenu',array(
+                'items'=>array(
+                array('label'=>'Oxford Knee', 'url'=>array('/oxfordKneeScores/index')),
+                array('label'=>'ONN Form', 'url'=>array('/oxfordKneeScores/index')),
+                ),
+            )); 
+                
                 $this->endWidget();
             ?>
         </ul>
