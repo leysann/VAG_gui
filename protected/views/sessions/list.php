@@ -2,14 +2,11 @@
 /* @var $this SessionsController */
 /* @var $dataProvider CActiveDataProvider */
 /* @var $renderedPatientView HTML string */
-
 $this->breadcrumbs=array(
 		'Sessions',
 );
-
 $this->menu=array(
 		array('label'=>'New Session', 'url'=>array('create')),
-		array('label'=>'List Sessions', 'url'=>array('index')),
 );
 ?>
 

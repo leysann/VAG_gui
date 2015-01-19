@@ -2,11 +2,6 @@
 /* @var $this PatientsSecretController */
 /* @var $model PatientsSecret */
 
-$this->breadcrumbs=array(
-	'Patients Secrets'=>array('index'),
-	'Manage',
-);
-
 $this->menu=array(
 	array('label'=>'List PatientsSecret', 'url'=>array('index')),
 	array('label'=>'Create PatientsSecret', 'url'=>array('create')),

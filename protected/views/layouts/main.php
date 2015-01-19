@@ -70,11 +70,20 @@ var turn_radio = function() {
 <body>
 <div id="wrap">
 	<div id="main">
-        <div class="header">
-            <h1 class="title"><img src="images/logout.png" alt="VAG logo" ><?php $this->widget('zii.widgets.CMenu',array(
-                'items'=>array(array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)),
-            )); ?></h1>
-        </div><!-- header -->
+        <div class="header" style="padding: 10px 35px;">
+ <?php $this->widget('zii.widgets.CMenu',
+    array(
+                'encodeLabel'=>false,
+                'activeCssClass'=>'active',
+                'items'=>array(array('label'=>'Login', 
+                'url'=>array('/site/login'), 
+                'visible'=>Yii::app()->user->isGuest),
+                array(
+                    'label'=>'<img src="images/stand.png" height="30px" alt="logoutstyle="margin-right:5px;"/>Logout', 
+                    'url'=>array('/site/logout'), 
+                    'visible'=>!Yii::app()->user->isGuest)
+                ),
+            )); ?></div><!-- header -->
 		<div class="content">
 
 			<?php echo $content; ?>

@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List PatientsSecret', 'url'=>array('index')),
-	array('label'=>'Manage PatientsSecret', 'url'=>array('admin')),
-);
+// $this->menu=array(
+// 	array('label'=>'List PatientsSecret', 'url'=>array('index')),
+// 	array('label'=>'Manage PatientsSecret', 'url'=>array('admin')),
+// );
 ?>
 
 <h1>Create PatientsSecret</h1>

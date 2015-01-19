@@ -7,11 +7,6 @@
     <link rel="shortcut icon" href="favicon.ico">
     <!-- blueprint CSS framework -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-    <![endif]-->
-
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
@@ -75,10 +70,18 @@ var turn_radio = function() {
 <div id="wrap">
     <div id="main">
 
-        <div class="header" style="padding: 10px 35px;"><img src="images/stand.png" height="30px" alt="logout" />
- <?php $this->widget('zii.widgets.CMenu',array(
-                'items'=>array(array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+        <div class="header" style="padding: 10px 35px;">
+ <?php $this->widget('zii.widgets.CMenu',
+    array(
+                'encodeLabel'=>false,
+                'activeCssClass'=>'active',
+                'items'=>array(array('label'=>'Login', 
+                'url'=>array('/site/login'), 
+                'visible'=>Yii::app()->user->isGuest),
+                array(
+                    'label'=>'<img src="images/stand.png" height="30px" alt="logoutstyle="margin-right:5px;"/>Logout', 
+                    'url'=>array('/site/logout'), 
+                    'visible'=>!Yii::app()->user->isGuest)
                 ),
             )); ?></div><!-- header -->
 
