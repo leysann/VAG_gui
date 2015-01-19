@@ -40,11 +40,18 @@ div.form select
 {
 	margin: 0.2em 0 0.5em 0;
 }
+div.form .newpat {
+	width: 291px;
+}
 div.form .alignleft {
 	float: left;
 }
 div.form .alignright {
-	float: right;
+	text-align:right;
+}
+.css-item
+{
+  float: right;
 }
 div.form fieldset
 {
@@ -59,6 +66,7 @@ fieldset
 }
 .some-class 
 { 
+	display: block;
 	float:left; 
 	clear:none; 
 	display:inline
@@ -105,11 +113,6 @@ div.form .hint
 div.form .note
 {
 	font-style: italic;
-}
-
-div.form span.required
-{
-	color: red;
 }
 
 div.form div.error label:first-child,

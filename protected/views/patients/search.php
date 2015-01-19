@@ -7,12 +7,18 @@
 <div class="form">
 	<div class="newpat">
 		<p class="alignleft">Search Patient</p>
-		<p class="alignright"><img src="images/add121.png"/><?php $this->widget('zii.widgets.CMenu',array(
+		<p class="alignright"><?php $this->widget('zii.widgets.CMenu',
+			array(
+				'encodeLabel'=>false,
 				'items'=>array(
-				array('label'=>'new', 'url'=>array('/patients/create')),
+				array(
+					'itemOptions' => array('class' => 'css-item'),
+					'label'=>'<img src="'.Yii::app()->request->baseUrl.'images/add121.png" width="20px"/>new', 
+					'url'=>array('/patients/create')),
 	),
 			)); ?></p>
 	</div>
+	
 
 
 

@@ -159,9 +159,7 @@ border-color:#9A8185;}
 			#sidebar .header .title {}
 		#sidebar .content {padding: 43px 0 20px 0;}
 			#sidebar .content .nav {}
-				#sidebar .content .nav a {background:#D9DCE0;
-					border-top:1px solid #E7EAED;
-					border-bottom:1px solid #D0D3D7;
+				#sidebar .content .nav a {
 					color:#000;display:block;
 					font-weight:900;
 					padding: 12px 10px 16px 10px;
